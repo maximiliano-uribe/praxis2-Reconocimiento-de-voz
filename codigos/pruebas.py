@@ -1,12 +1,14 @@
 """
-analisis_fft_voz_mejorado_guardado.py
+analisis_fft_voz_.py
 ---------------------------------
 Versión adaptada para entornos sin GUI (como Codespaces):
-1. Guarda audios en /audios/
-2. Guarda las gráficas generadas en /graficos/
+1. Guarda audios en /audios_pruebas/
+2. Guarda las gráficas generadas en /graficos_pruebas/
 3. No abre ventanas (plt.show), guarda las imágenes como archivos PNG
 
 En Codespaces no se pueden guardar audios debes descargar el codigo y ahi si se puede.
+si se prueba el codigo deben guardar los audios manualmente en la carpeta AUDIOS_PRUEBAS
+para que se pueda probar dentro del Codespace y se guarden las graficas de pruebas.
 
 Requiere:
     pip install soundfile sounddevice numpy matplotlib

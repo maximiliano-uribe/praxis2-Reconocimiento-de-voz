@@ -6,6 +6,8 @@ Versión adaptada para entornos sin GUI (como Codespaces):
 2. Guarda las gráficas generadas en /graficos/
 3. No abre ventanas (plt.show), guarda las imágenes como archivos PNG
 
+En Codespaces no se pueden guardar audios debes descargar el codigo y ahi si se puede.
+
 Requiere:
     pip install soundfile sounddevice numpy matplotlib
 """

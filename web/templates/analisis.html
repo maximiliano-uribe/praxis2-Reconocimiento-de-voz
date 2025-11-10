@@ -2,14 +2,44 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Análisis de Voz</title>
+  <title>Autenticación por Voz</title>
   <script src="/static/grabar.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f7f7f7;
+      margin-top: 80px;
+    }
+    button {
+      padding: 12px 25px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #mensaje {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center;">
-  <h1>🎙️ Grabar y Analizar Voz</h1>
-  <button onclick="grabarAudio('/subir_audio')">Grabar Audio</button>
 
-  <div id="resultado"></div>
+<body>
+  <h1>🔐 Autenticación por Voz</h1>
+  <p>Graba tu voz para verificar acceso.</p>
+  
+  <button onclick="registrarVoz()">Registrar voz base</button>
+  <button onclick="verificarVoz()">Verificar voz</button>
+
+  <div id="mensaje"></div>
 
   <p><a href="/">⬅️ Volver al inicio</a></p>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Voz</title>
+</head>
+<body style="background:#2201ff;color:white;text-align:center;padding:30px;font-family:Arial;">
+    <h1>🔊 Análisis de Voz</h1>
+    <p>Visualiza las transformadas de Fourier de tus grabaciones.</p>
+
+    <button onclick="mostrarGrafica()">Mostrar gráfica</button>
+    <button onclick="cerrarGrafica()">Cerrar gráfica</button>
+
+    <div id="grafica" style="margin-top:20px;"></div>
+
+    <script>
+        async function mostrarGrafica() {
+            const res = await fetch("/graficas_voces");
+            const data = await res.json();
+            let html = "";
+
+            if (data.length === 0) {
+                html = "<p>No hay grabaciones guardadas para mostrar.</p>";
+            } else {
+                data.forEach(item => {
+                    html += `
+                        <h3>${item.archivo}</h3>
+                        <h4>Onda temporal</h4>
+                        <img src="data:image/png;base64,${item.onda}" width="500"><br>
+                        <h4>Transformada de Fourier (FFT)</h4>
+                        <img src="data:image/png;base64,${item.fft}" width="500"><br><br>
+                    `;
+                });
+            }
+
+            document.getElementById("grafica").innerHTML = html;
+        }
+
+        function cerrarGrafica() {
+            document.getElementById("grafica").innerHTML = "";
+        }
+    </script>
+
+    <p><a href="/" style="color:#4CAF50;">⬅️ Volver al panel principal</a></p>
+</body>
+</html>

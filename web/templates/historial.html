@@ -3,17 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Historial</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #8BC34A;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 500px;
+            margin: 30px auto;
+            text-align: left;
+        }
+        li {
+            background: #1f1f1f;
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+        .botones {
+            margin-top: 30px;
+        }
+        a, button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        a {
+            background-color: #4CAF50;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+        button {
+            background-color: #f44336;
+        }
+        button:hover {
+            background-color: #e53935;
+        }
+        p {
+            color: #ccc;
+        }
+    </style>
 </head>
-<body style="background:#121212;color:white;text-align:center;padding:30px;font-family:Arial;">
+<body>
     <h1>📜 Historial</h1>
     <p>Registro de accesos y acciones recientes:</p>
 
-    <ul style="list-style:none;padding:0;">
-        <li>08/11/2025 18:40 - Acceso correcto</li>
-        <li>08/11/2025 18:42 - Análisis de voz abierto</li>
-        <li>08/11/2025 18:50 - PDF protegido abierto</li>
-    </ul>
+    {% if registros %}
+        <ul>
+            {% for linea in registros %}
+                <li>{{ linea }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay registros aún.</p>
+    {% endif %}
 
-    <p><a href="/" style="color:#4CAF50;">⬅️ Volver</a></p>
+    <div class="botones">
+        <form action="/borrar_historial" method="post" style="display:inline;">
+            <button type="submit">🗑 Borrar historial</button>
+        </form>
+        <a href="/acceso">⬅️ Volver</a>
+    </div>
 </body>
 </html>

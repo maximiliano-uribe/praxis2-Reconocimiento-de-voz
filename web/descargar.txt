@@ -1,0 +1,6 @@
+pip install flask
+pip install numpy
+pip install librosa
+pip install soundfile
+pip install matplotlib
+pip install scipy

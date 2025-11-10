@@ -36,7 +36,18 @@ def generar_graficas(archivo_audio, nombre_salida):
     plt.savefig(f"static/{nombre_salida}_fft.png")
     plt.close()
 
+def leer_historial():
+    if not os.path.exists(HISTORIAL_FILE):
+        return []
+    with open(HISTORIAL_FILE, "r", encoding="utf-8") as f:
+        lineas =f.readlines()
+    return [linea.strip() for linea in reversed(lineas)]
 
+def registrar_evento(evento):
+    fecha = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    registro = f"{fecha} - {evento}\n"
+    with open(HISTORIAL_FILE, "a", encoding="utf-8") as f:
+        f.write(registro)
 
 # === Rutas principales ===
 @app.route("/graficas_voces")
@@ -116,9 +127,10 @@ def acceso():
 def analisis():
     return render_template('analisis_voces.html')
 
-@app.route('/historial')
+@app.route("/historial")
 def historial():
-    return render_template('historial.html')
+    registros = leer_historial()
+    return render_template("historial.html", registros=registros)
 
 @app.route('/archivos')
 def archivos():
@@ -168,6 +180,12 @@ def subir_audio():
     except Exception as e:
         print("Error al analizar el audio:", e)
         return "Error en análisis", 500
+
+@app.route("/borrar_historial", methods=["POST"])
+def borrar_historial():
+    open(HISTORIAL_FILE, "w", encoding="utf-8").close()  # Limpia el archivo
+    registrar_evento("Historial borrado por el usuario")
+    return redirect(url_for("historial"))
 
 @app.route('/agregar_voz', methods=['POST'])
 def agregar_voz():

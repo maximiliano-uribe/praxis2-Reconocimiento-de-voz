@@ -8,12 +8,17 @@
     <h1>📄 Archivos Protegidos</h1>
     <p>Visualiza o agrega archivos asociados a tu voz registrada.</p>
 
-    <button onclick="window.open('/static/reconocimiento de voz (1).pdf')">📘 Abrir PDF protegido</button>
+    <!-- Botón modificado para registrar la acción -->
+    <form method="POST" action="/abrir_pdf">
+        <button type="submit">📘 Abrir PDF protegido</button>
+    </form>
+
     <form method="POST" enctype="multipart/form-data" action="/agregar_pdf" style="margin-top:20px;">
         <input type="file" name="archivo" accept=".pdf" required>
         <button type="submit">➕ Agregar nuevo PDF</button>
     </form>
 
-    <p><a href="/" style="color:#4CAF50;">⬅️ Volver</a></p>
+    <p><a href="/acceso" style="color:#4CAF50;">⬅️ Volver</a></p>
 </body>
 </html>
+

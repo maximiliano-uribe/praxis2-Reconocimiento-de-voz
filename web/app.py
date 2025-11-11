@@ -8,8 +8,10 @@ import io, base64, os
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
 from scipy.signal import resample
+from datetime import datetime
 
 app = Flask(__name__)
+HISTORIAL_FILE = "historial.txt"
 
 # === Funciones auxiliares ===
 def generar_huella(audio_path):
@@ -36,6 +38,12 @@ def generar_graficas(archivo_audio, nombre_salida):
     plt.savefig(f"static/{nombre_salida}_fft.png")
     plt.close()
 
+def registrar_evento(evento):
+    fecha = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    registro = f"{fecha} - {evento}\n"
+    with open(HISTORIAL_FILE, "a", encoding="utf-8") as f:
+        f.write(registro)
+
 def leer_historial():
     if not os.path.exists(HISTORIAL_FILE):
         return []
@@ -43,14 +51,36 @@ def leer_historial():
         lineas =f.readlines()
     return [linea.strip() for linea in reversed(lineas)]
 
-def registrar_evento(evento):
-    fecha = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    registro = f"{fecha} - {evento}\n"
-    with open(HISTORIAL_FILE, "a", encoding="utf-8") as f:
-        f.write(registro)
+def registrar_ruta(nombre_accion):
+    """Decorador para registrar acciones automáticamente."""
+    def decorador(func):
+        def wrapper(*args, **kwargs):
+            registrar_evento(f"Acceso a: {nombre_accion}")
+            return func(*args, **kwargs)
+        wrapper.__name__ = func.__name__
+        return wrapper
+    return decorador
 
 # === Rutas principales ===
+@app.route('/abrir_pdf', methods=['POST'])
+def abrir_pdf():
+    # Aquí registramos que el usuario abrió el PDF
+    registrar_evento("Usuario abrió el PDF protegido 'reconocimiento de voz (1).pdf'")
+    # Luego redirigimos al archivo real
+    return redirect('/static/reconocimiento de voz (1).pdf')
+
+@app.route('/agregar_pdf', methods=['POST'])
+def agregar_pdf():
+    archivo = request.files['archivo']
+    if archivo:
+        nombre = archivo.filename
+        ruta_guardado = os.path.join('static', nombre)
+        archivo.save(ruta_guardado)
+        registrar_evento(f"Usuario agregó un nuevo archivo PDF: {nombre}")
+    return redirect(url_for('archivos'))
+
 @app.route("/graficas_voces")
+@registrar_ruta("Página principal (index)")
 def graficas_voces():
     archivos = ["voz_registrada.wav"]
     imagenes = []
@@ -103,6 +133,11 @@ def graficas_voces():
 
     return jsonify(imagenes)
 
+@app.route("/historial")
+def historial():
+    registros = leer_historial()
+    return render_template("historial.html", registros=registros)
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -121,26 +156,21 @@ def contraseña():
 
 @app.route('/acceso')
 def acceso():
+    #registrar_evento("Usuario entro a la página de acceso")
     return render_template('acceso.html')
 
 @app.route('/analisis')
+@registrar_ruta("/analisis")
 def analisis():
     return render_template('analisis_voces.html')
 
-@app.route("/historial")
-def historial():
-    registros = leer_historial()
-    return render_template("historial.html", registros=registros)
-
 @app.route('/archivos')
+@registrar_ruta("/archivos")
 def archivos():
     return render_template('archivos.html')
 
-@app.route('/entrenamiento')
-def entrenamiento():
-    return render_template('entrenamiento.html')
-
 @app.route('/configuracion')
+@registrar_ruta("/configuracion")
 def configuracion():
     return render_template('configuracion.html')
 
@@ -175,17 +205,11 @@ def subir_audio():
 
     # Genera la gráfica
     try:
-        grafica = generar_grafica(salida)
+        grafica = generar_graficas(salida)
         return jsonify({"grafica": grafica})
     except Exception as e:
         print("Error al analizar el audio:", e)
         return "Error en análisis", 500
-
-@app.route("/borrar_historial", methods=["POST"])
-def borrar_historial():
-    open(HISTORIAL_FILE, "w", encoding="utf-8").close()  # Limpia el archivo
-    registrar_evento("Historial borrado por el usuario")
-    return redirect(url_for("historial"))
 
 @app.route('/agregar_voz', methods=['POST'])
 def agregar_voz():
@@ -205,9 +229,15 @@ def agregar_voz():
     # Guardar huella en archivo
     with open("voces_autorizadas.txt", "a", encoding="utf-8") as f:
         f.write(f"{nombre},{huella}\n")
+    registrar_evento("se agrego una nueva voz")
 
     return f"✅ Voz '{nombre}' agregada correctamente como voz autorizada."
 
+@app.route("/borrar_historial", methods=["POST"])
+def borrar_historial():
+    open(HISTORIAL_FILE, "w", encoding="utf-8").close()  # Limpia el archivo
+    registrar_evento("Historial borrado por el usuario")
+    return redirect(url_for("historial"))
 
 @app.route('/guardar_voz', methods=['POST'])
 def guardar_voz():
@@ -225,6 +255,7 @@ def guardar_voz():
     with open('huella_base.txt', 'w') as f:
         f.write(huella)
 
+    registrar_evento("Se guardó un nuevo audio del usuario")
     return jsonify({"mensaje": "✅ Voz registrada correctamente."})
 
 # === Manejo de contraseña ===
@@ -239,6 +270,7 @@ def guardar_clave():
     with open('clave.txt', 'w', encoding='utf-8') as f:
         f.write(hash_clave)
 
+    registrar_evento("se guardo una nueva contraseña")
     print("Nueva clave guardada (hash).")
     return redirect(url_for('acceso')) 
 
@@ -266,6 +298,7 @@ def verificar_voz():
     print(f"Similitud de voces: {similitud:.4f}")
 
     if comparar_voces("voz_registrada.wav", "voz_prueba.wav"):
+        registrar_evento("se acepto el acceso a la pagina principal")
         return jsonify({"mensaje": "✅ Acceso concedido", "acceso": True})
     else:
         return jsonify({"mensaje": "❌ Voz no coincide. Acceso denegado.", "acceso": False})
@@ -302,11 +335,12 @@ def verificar_clave():
 
     # Usar compare_digest para evitar diferencias de tiempo
     if hmac.compare_digest(hash_guardado, hash_ingresada):
+        registrar_evento("se ingreso por contraseña")
         return render_template("acceso.html")
     else:
         return render_template("denegado.html")
 
-def comparar_voces(archivo1, archivo2, tolerancia=0.5):
+def comparar_voces(archivo1, archivo2, tolerancia=0.3):
     # Leer ambos audios
     fs1, data1 = wavfile.read(archivo1)
     fs2, data2 = wavfile.read(archivo2)

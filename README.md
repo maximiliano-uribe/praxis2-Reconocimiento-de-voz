@@ -6,5 +6,5 @@ para mayor entendimiento sobre como las matematicas nos puede ayudar a facilitar
 documento editable:
 https://docs.google.com/document/d/1mVlBHgOmfloW3aLF72ZnxgmWAQqirpFryL3fjXYBw2c/edit?usp=sharing
 
-documento en Latex:
-https://www.overleaf.com/1173914385cpvfjwhqmgmn#ebd6c7
+documento en Latex: https://www.overleaf.com/5546881213hbpkjmgktfkz#d0cb70
+

@@ -1,46 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Análisis de Voz</title>
-</head>
-<body style="background:#2201ff;color:white;text-align:center;padding:30px;font-family:Arial;">
-    <h1>🔊 Análisis de Voz</h1>
-    <p>Visualiza las transformadas de Fourier de tus grabaciones.</p>
+{% extends "base_acceso.html" %}
+{% block content %}
 
-    <button onclick="mostrarGrafica()">Mostrar gráfica</button>
-    <button onclick="cerrarGrafica()">Cerrar gráfica</button>
+<h2>🔊 Análisis de Voces Registradas</h2>
 
-    <div id="grafica" style="margin-top:20px;"></div>
+<p>Selecciona una voz para generar sus gráficas:</p>
 
-    <script>
-        async function mostrarGrafica() {
-            const res = await fetch("/graficas_voces");
-            const data = await res.json();
-            let html = "";
+<select id="selectorVoces" style="padding:8px; font-size:16px;"></select>
+<br><br>
 
-            if (data.length === 0) {
-                html = "<p>No hay grabaciones guardadas para mostrar.</p>";
-            } else {
-                data.forEach(item => {
-                    html += `
-                        <h3>${item.archivo}</h3>
-                        <h4>Onda temporal</h4>
-                        <img src="data:image/png;base64,${item.onda}" width="500"><br>
-                        <h4>Transformada de Fourier (FFT)</h4>
-                        <img src="data:image/png;base64,${item.fft}" width="500"><br><br>
-                    `;
-                });
-            }
+<button onclick="generarGraficas()" style="padding:10px 20px; font-size:16px;">
+    📊 Generar Gráficas
+</button>
 
-            document.getElementById("grafica").innerHTML = html;
+<hr>
+
+<div id="resultados" style="margin-top:20px;">
+    <h3>Gráfica de Onda</h3>
+    <img id="imgOnda" style="max-width:80%; display:none;">
+
+    <h3>Gráfica FFT</h3>
+    <img id="imgFFT" style="max-width:80%; display:none;">
+
+    <h3>Espectrograma</h3>
+    <img id="imgSpec" style="max-width:80%; display:none;">
+</div>
+
+<script>
+// Cargar voces al cargar la página
+fetch('/listar_voces')
+    .then(r => r.json())
+    .then(voces => {
+        let select = document.getElementById("selectorVoces");
+        voces.forEach(v => {
+            let op = document.createElement("option");
+            op.value = v;
+            op.textContent = v;
+            select.appendChild(op);
+        });
+    });
+
+// Generar gráficas
+function generarGraficas() {
+    let archivo = document.getElementById("selectorVoces").value;
+
+    fetch('/graficar_voz', {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({archivo: archivo})
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.error) {
+            alert(data.error);
+            return;
         }
+        document.getElementById("imgOnda").src = "/static/" + data.onda;
+        document.getElementById("imgFFT").src = "/static/" + data.fft;
+        document.getElementById("imgSpec").src = "/static/" + data.spec;
 
-        function cerrarGrafica() {
-            document.getElementById("grafica").innerHTML = "";
-        }
-    </script>
+        document.getElementById("imgOnda").style.display = "block";
+        document.getElementById("imgFFT").style.display = "block";
+        document.getElementById("imgSpec").style.display = "block";
+    });
+}
+</script>
 
-    <p><a href="/" style="color:#4CAF50;">⬅️ Volver al panel principal</a></p>
-</body>
-</html>
+{% endblock %}

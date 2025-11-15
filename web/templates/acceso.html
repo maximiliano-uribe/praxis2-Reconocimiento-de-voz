@@ -1,62 +1,28 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Zona protegida</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0b4816;
-            color: #f1f1f1;
-            text-align: center;
-            padding: 40px;
-        }
-        h1 { color: #4CAF50; }
-        .boton-principal {
-            display: block;
-            width: 60%;
-            margin: 20px auto;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            color: white;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .analisis { background-color: #03A9F4; }
-        .historial { background-color: #8BC34A; }
-        .archivos { background-color: #2196F3; }
-        .entrenamiento { background-color: #FF9800; }
-        .configuracion { background-color: #9C27B0; }
-        .boton-principal:hover {
-            opacity: 0.8;
-        }
-    </style>
-</head>
-<body>
+{% extends "base_acceso.html" %}
+{% block content %}
 
-    <h1>✅ Acceso concedido</h1>
-    <p>Bienvenido al sistema de reconocimiento de voz.</p>
-    <hr>
+<h1 style="color:#4CAF50;">✅ Acceso concedido</h1>
+<p>Bienvenido al sistema de reconocimiento de voz.</p>
+<hr>
 
-    <!-- BOTONES PRINCIPALES -->
-    <button class="boton-principal analisis" onclick="window.location.href='/analisis'">
-        🔊 Análisis de voz
-    </button>
+<button onclick="window.location.href='/analisis'" 
+        style="display:block;width:60%;margin:20px auto;padding:15px;border:none;border-radius:10px;font-size:18px;color:white;background:#03A9F4;cursor:pointer;transition:0.3s;">
+    🔊 Análisis de voz
+</button>
 
-    <button class="boton-principal historial" onclick="window.location.href='/historial'">
-        📈 Historial de accesos
-    </button>
+<button onclick="window.location.href='/historial'" 
+        style="display:block;width:60%;margin:20px auto;padding:15px;border:none;border-radius:10px;font-size:18px;color:white;background:#8BC34A;cursor:pointer;transition:0.3s;">
+    📈 Historial de accesos
+</button>
 
-    <button class="boton-principal archivos" onclick="window.location.href='/archivos'">
-        📄 Archivos protegidos
-    </button>
+<button onclick="window.location.href='/archivos'" 
+        style="display:block;width:60%;margin:20px auto;padding:15px;border:none;border-radius:10px;font-size:18px;color:white;background:#2196F3;cursor:pointer;transition:0.3s;">
+    📄 Archivos protegidos
+</button>
 
-    <button class="boton-principal configuracion" onclick="window.location.href='/configuracion'">
-        ⚙️ Configuración
-    </button>
+<button onclick="window.location.href='/configuracion'" 
+        style="display:block;width:60%;margin:20px auto;padding:15px;border:none;border-radius:10px;font-size:18px;color:white;background:#9C27B0;cursor:pointer;transition:0.3s;">
+    ⚙️ Configuración
+</button>
 
-</body>
-</html>
-
+{% endblock %}

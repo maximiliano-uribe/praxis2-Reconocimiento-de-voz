@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Acceso con Contraseña</title>
-</head>
-<body style="font-family: Arial; text-align: center;">
-    <h1>🔑 Acceso Alternativo</h1>
+{% extends "base_index.html" %}
+{% block content %}
 
-    <h3>Ingresar Contraseña Guardada</h3>
-    <form action="/verificar_clave" method="post">
-        <input type="password" name="clave" placeholder="Tu contraseña" required>
-        <button type="submit">Acceder</button>
-    </form>
+<h1>🔑 Acceso Alternativo</h1>
 
-    <hr>
+<h3>Ingresar Contraseña Guardada</h3>
+<form action="/verificar_clave" method="post">
+    <input type="password" name="clave" placeholder="Tu contraseña" required>
+    <button type="submit">Acceder</button>
+</form>
 
-    <p><a href="/">⬅️ Volver al inicio</a></p>
-</body>
-</html>
+<hr>
+
+<p><a href="/">⬅️ Volver al inicio</a></p>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <!-- Fuente moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            background-size: 300% 300%;
+            animation: gradientFlow 12s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientFlow {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        /* Contenedor tipo tarjeta central opcional */
+        .container-card {
+            width: 90%;
+            max-width: 980px;
+            margin: 60px auto;
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+
+        /* Botones premium */
+        .btn {
+            display: inline-block;
+            padding: 12px 26px;
+            background: #6f6ce9;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #8f8bff;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container-card">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

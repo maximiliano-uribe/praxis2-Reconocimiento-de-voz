@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Acceso por Voz</title>
-</head>
-<body style="font-family: Arial; text-align: center;">
-    <h1>🔊 Proyecto de Acceso por Voz</h1>
-    <p>Selecciona una opción:</p>
+{% extends "base_index.html" %}
+{% block content %}
 
-    <button onclick="location.href='/analizar'">🎙️ acceder con Voz</button><br><br>
-    <button onclick="location.href='/contraseña'">🔑 Acceder con Contraseña</button>
-</body>
-</html>
+<h1>🔊 Proyecto de Acceso por Voz</h1>
+<p>Selecciona una opción:</p>
+
+<button onclick="location.href='/analizar'">🎙️ acceder con Voz</button><br><br>
+<button onclick="location.href='/contraseña'">🔑 Acceder con Contraseña</button>
+
+{% endblock %}
+
 

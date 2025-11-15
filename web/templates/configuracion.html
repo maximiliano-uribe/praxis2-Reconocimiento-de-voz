@@ -1,31 +1,30 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Configuración</title>
-</head>
-<body style="background:#121212;color:white;text-align:center;padding:30px;font-family:Arial;">
-    <h1>⚙️ Configuración</h1>
-    <p>Gestiona tu voz y tu contraseña.</p>
+{% extends "base_acceso.html" %}
+{% block content %}
 
-    <form method="POST" action="/guardar_clave">
-        <input type="password" name="clave" placeholder="Nueva contraseña" required>
-        <button type="submit">Guardar contraseña</button>
-    </form>
+<h1>⚙️ Configuración</h1>
+<p>Gestiona tu voz y tu contraseña.</p>
 
-    <hr style="margin:20px 0;">
+<form method="POST" action="/guardar_clave">
+    <input type="password" name="clave" placeholder="Nueva contraseña" required>
+    <button type="submit" style="margin-top:10px;">Guardar contraseña</button>
+</form>
 
-    <form method="POST" enctype="multipart/form-data" action="/agregar_voz">
-        <input type="file" name="archivo" accept=".wav,.mp3" required>
-        <button type="submit">Agregar nueva voz</button>
-    </form>
-    
-    <button onclick="registrarVoz()">Registrar voz base</button>
+<hr style="margin:20px 0;">
 
-    <hr style="margin:20px 0;">
+<form method="POST" enctype="multipart/form-data" action="/agregar_voz">
+    <input type="file" name="archivo" accept=".wav,.mp3" required>
+    <button type="submit">Agregar nueva voz</button>
+</form>
 
-    <button onclick="window.location.href='/'" style="background-color:#e53935;color:white;padding:10px 20px;border:none;border-radius:8px;">Cerrar sesión</button>
+<button onclick="registrarVoz()" style="margin-top:15px;">Registrar voz base</button>
 
-    <p><a href="/" style="color:#4CAF50;">⬅️ Volver</a></p>
-</body>
-</html>
+<hr style="margin:20px 0;">
+
+<button onclick="window.location.href='/'" 
+        style="background-color:#e53935;color:white;padding:10px 20px;border:none;border-radius:8px;">
+    Cerrar sesión
+</button>
+
+<p><a href="/acceso" style="color:#4CAF50;">⬅️ Volver</a></p>
+
+{% endblock %}

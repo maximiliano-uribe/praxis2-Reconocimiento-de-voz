@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Registrar Voz</title>
-  <script src="/static/grabar.js"></script>
-</head>
-<body style="font-family: Arial; text-align: center;">
-  <h1>🔗 Registrar Nueva Voz</h1>
-  <button onclick="grabarAudio('/guardar_voz')">Grabar y Registrar Voz</button>
+{% extends "base_acceso.html" %}
+{% block content %}
 
-  <div id="resultado"></div>
+<h1>🔗 Registrar Nueva Voz</h1>
 
-  <p><a href="/">⬅️ Volver al inicio</a></p>
-</body>
-</html>
+<button onclick="grabarAudio('/guardar_voz')">Grabar y Registrar Voz</button>
+
+<div id="resultado" style="margin-top:20px;"></div>
+
+<p><a href="/" style="color:#4CAF50;">⬅️ Volver al inicio</a></p>
+
+<script src="/static/grabar.js"></script>
+
+{% endblock %}

@@ -1,0 +1,1 @@
+la database se hara con .json para poder tener un registro de entrada

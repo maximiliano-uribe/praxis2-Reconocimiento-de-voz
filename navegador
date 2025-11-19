@@ -1,0 +1,133 @@
+import soundfile as sf
+import sounddevice as sd
+import os
+import speech_recognition as sr
+import platform
+import numpy as np
+import librosa
+
+# CONFIG
+fs = 44100
+CARPETA_AUDIOS = "audios"
+if not os.path.exists(CARPETA_AUDIOS):
+    os.makedirs(CARPETA_AUDIOS)
+
+VOICE_PRINT_FILE = "huella_voz.npy"
+
+
+# ------------------- GRABAR AUDIO -------------------
+
+def grabar_audio(duracion, archivo):
+    print("Grabando audio...")
+    audio = sd.rec(int(duracion * fs), samplerate=fs, channels=1, dtype='float32')
+    sd.wait()
+    sf.write(archivo, audio, fs)
+    print(f"Audio guardado en {archivo}")
+    return archivo
+
+
+# ------------------- EXTRAER MFCC -------------------
+
+def extraer_mfcc(ruta):
+    audio, sr_rate = librosa.load(ruta, sr=fs)
+    mfcc = librosa.feature.mfcc(y=audio, sr=sr_rate, n_mfcc=20)
+    return np.mean(mfcc, axis=1)  # Promedio = “huella de voz”
+
+
+# ------------------- GUARDAR VOZ AUTORIZADA -------------------
+
+def registrar_voz_autorizada():
+    print("Diga su frase secreta para registrar su voz...")
+    ruta = os.path.join(CARPETA_AUDIOS, "voz_autorizada.wav")
+    grabar_audio(3, ruta)
+
+    huella = extraer_mfcc(ruta)
+    np.save(VOICE_PRINT_FILE, huella)
+    print("Huella de voz guardada correctamente.")
+
+
+# ------------------- VERIFICAR VOZ -------------------
+
+def voz_es_autorizada(ruta_audio):
+    if not os.path.exists(VOICE_PRINT_FILE):
+        print("No hay voz autorizada registrada.")
+        return False
+
+    huella_registrada = np.load(VOICE_PRINT_FILE)
+    huella_actual = extraer_mfcc(ruta_audio)
+
+    distancia = np.linalg.norm(huella_registrada - huella_actual)
+
+    print("Distancia de comparación:", distancia)
+
+    # ENTRE 0 y 60 = coincidencia aceptable
+    return distancia < 30  
+
+
+# ------------------- DETECTAR TEXTO -------------------
+
+def reconocer_texto():
+    recognizer = sr.Recognizer()
+
+    with sr.Microphone() as source:
+        print("Escuchando...")
+        recognizer.adjust_for_ambient_noise(source)
+        audio = recognizer.listen(source)
+
+    try:
+        texto = recognizer.recognize_google(audio, language="es-ES")
+        print("Dijiste:", texto)
+        return texto.lower()
+    except:
+        return ""
+
+
+# ------------------- ABRIR NAVEGADOR SIN WEBBROWSER -------------------
+
+def abrir_navegador(url):
+    sistema = platform.system()
+
+    if sistema == "Windows":
+        os.system(f'start "" "{url}"')
+    elif sistema == "Darwin":
+        os.system(f'open "{url}"')
+    else:
+        os.system(f'xdg-open "{url}"')
+
+
+# ------------------- PROCESO PRINCIPAL -------------------
+
+def escuchar_comando():
+    print("Hable para verificar su identidad…")
+
+    audio_temp = os.path.join(CARPETA_AUDIOS, "temp.wav")
+    grabar_audio(3, audio_temp)
+
+    if voz_es_autorizada(audio_temp):
+        print("✔ Voz autorizada reconocida.")
+        texto = reconocer_texto()
+
+        if "abrir google" in texto:
+            abrir_navegador("https://www.google.com")
+        else:
+            abrir_navegador(f"https://www.google.com/search?q={texto}")
+
+    else:
+        print("❌ Voz no autorizada. Acceso denegado.")
+
+
+# ------------------- MENÚ -------------------
+while True :
+    print("1. Registrar voz autorizada")
+    print("2. Escuchar comando")
+    print("3 exit")
+    op = input("Seleccione opción: ")
+
+    if op == "1":
+        registrar_voz_autorizada()
+    elif op == "2":
+        escuchar_comando()
+    elif op == "3":
+        break 
+    else:
+        print("Opción no válida.")

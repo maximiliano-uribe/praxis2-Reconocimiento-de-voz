@@ -5,6 +5,8 @@ import os
 def mostrar_menu():
     print(f"\n__--||  M E N U   P R I N C I P A L  ||--__")
     print("1. Sistema De Notas Por Voz")
+    print("2. Grabadora De Voz")
+    print("3. Analizador De Audio")
     print("0. SALIR")
 
 def ejecutar_script(script_rel, nombre_error):
@@ -45,3 +47,4 @@ if __name__ == "__main__":
         
         else:
             print("\nOpcion No Disponible")
+

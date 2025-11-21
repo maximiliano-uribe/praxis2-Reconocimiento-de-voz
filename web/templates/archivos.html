@@ -4,13 +4,18 @@
 <h1>📄 Archivos Protegidos</h1>
 <p>Visualiza o agrega archivos asociados a tu voz registrada.</p>
 
-<form method="POST" action="/abrir_pdf">
-    <button type="submit">📘 Abrir PDF protegido</button>
-</form>
+<!-- Abrir PDF específico -->
+<p>
+    <a href="/abrir_pdf?archivo=praxis_2_Matematicas_4.pdf" target="_blank" 
+       style="padding:10px 20px; background-color:#4CAF50; color:white; text-decoration:none; border-radius:5px;">
+        📘 Abrir PDF protegido
+    </a>
+</p>
 
-<form method="POST" enctype="multipart/form-data" action="/agregar_pdf" style="margin-top:20px;">
+<!-- Formulario para subir un nuevo PDF -->
+<form method="POST" enctype="multipart/form-data" action="/agregar_pdf">
     <input type="file" name="archivo" accept=".pdf" required>
-    <button type="submit">➕ Agregar nuevo PDF</button>
+    <button type="submit">➕ Agregar PDF</button>
 </form>
 
 <p><a href="/acceso" style="color:#4CAF50;">⬅️ Volver</a></p>

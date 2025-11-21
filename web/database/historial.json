@@ -1,0 +1,522 @@
+[
+    {
+        "fecha": "2025-11-19 11:13:38",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 11:13:57",
+        "tipo": "ERROR",
+        "evento": "Acceso por voz fallido (coef=-0.006)"
+    },
+    {
+        "fecha": "2025-11-19 11:15:13",
+        "tipo": "ERROR",
+        "evento": "Acceso por voz fallido (coef=0.060)"
+    },
+    {
+        "fecha": "2025-11-19 11:16:06",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 11:16:15",
+        "tipo": "ERROR",
+        "evento": "Acceso por voz fallido (coef=-0.008)"
+    },
+    {
+        "fecha": "2025-11-19 11:19:01",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 11:19:09",
+        "tipo": "ERROR",
+        "evento": "Acceso por voz fallido (coef=-0.030)"
+    },
+    {
+        "fecha": "2025-11-19 11:20:26",
+        "tipo": "ERROR",
+        "evento": "Acceso por voz fallido (coef=-0.147)"
+    },
+    {
+        "fecha": "2025-11-19 11:20:34",
+        "tipo": "ERROR",
+        "evento": "Acceso por voz fallido (coef=-0.016)"
+    },
+    {
+        "fecha": "2025-11-19 11:30:41",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 11:36:07",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.487)"
+    },
+    {
+        "fecha": "2025-11-19 11:36:18",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 11:36:27",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.473)"
+    },
+    {
+        "fecha": "2025-11-19 11:41:48",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 11:42:06",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.390)"
+    },
+    {
+        "fecha": "2025-11-19 11:44:24",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 11:44:31",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.487)"
+    },
+    {
+        "fecha": "2025-11-19 11:44:32",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 14:40:43",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.376)"
+    },
+    {
+        "fecha": "2025-11-19 14:41:06",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 14:41:14",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.456)"
+    },
+    {
+        "fecha": "2025-11-19 14:41:18",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 14:42:45",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.397)"
+    },
+    {
+        "fecha": "2025-11-19 14:42:53",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.414)"
+    },
+    {
+        "fecha": "2025-11-19 14:43:01",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 14:43:09",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.384)"
+    },
+    {
+        "fecha": "2025-11-19 14:43:17",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.468)"
+    },
+    {
+        "fecha": "2025-11-19 14:43:20",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:14:57",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.473)"
+    },
+    {
+        "fecha": "2025-11-19 15:15:00",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:20:25",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.351)"
+    },
+    {
+        "fecha": "2025-11-19 15:20:34",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.441)"
+    },
+    {
+        "fecha": "2025-11-19 15:20:42",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:29:11",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.407)"
+    },
+    {
+        "fecha": "2025-11-19 15:29:19",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.468)"
+    },
+    {
+        "fecha": "2025-11-19 15:29:22",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:43:27",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.401)"
+    },
+    {
+        "fecha": "2025-11-19 15:43:36",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.425)"
+    },
+    {
+        "fecha": "2025-11-19 15:43:40",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:48:07",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.417)"
+    },
+    {
+        "fecha": "2025-11-19 15:48:15",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.426)"
+    },
+    {
+        "fecha": "2025-11-19 15:48:18",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:49:42",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.367)"
+    },
+    {
+        "fecha": "2025-11-19 15:49:50",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.361)"
+    },
+    {
+        "fecha": "2025-11-19 15:49:57",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.348)"
+    },
+    {
+        "fecha": "2025-11-19 15:50:05",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.411)"
+    },
+    {
+        "fecha": "2025-11-19 15:50:13",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 15:50:21",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.437)"
+    },
+    {
+        "fecha": "2025-11-19 15:50:22",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:53:11",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.432)"
+    },
+    {
+        "fecha": "2025-11-19 15:53:13",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:58:07",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.385)"
+    },
+    {
+        "fecha": "2025-11-19 15:58:16",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.409)"
+    },
+    {
+        "fecha": "2025-11-19 15:58:24",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.368)"
+    },
+    {
+        "fecha": "2025-11-19 15:58:32",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.419)"
+    },
+    {
+        "fecha": "2025-11-19 15:58:40",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.352)"
+    },
+    {
+        "fecha": "2025-11-19 15:58:48",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 15:58:56",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.429)"
+    },
+    {
+        "fecha": "2025-11-19 15:59:03",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 15:59:50",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.383)"
+    },
+    {
+        "fecha": "2025-11-19 15:59:57",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.364)"
+    },
+    {
+        "fecha": "2025-11-19 16:00:04",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.431)"
+    },
+    {
+        "fecha": "2025-11-19 16:00:05",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 16:08:21",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.451)"
+    },
+    {
+        "fecha": "2025-11-19 16:08:23",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 16:09:14",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.394)"
+    },
+    {
+        "fecha": "2025-11-19 16:09:21",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.453)"
+    },
+    {
+        "fecha": "2025-11-19 16:09:22",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 16:13:27",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.418)"
+    },
+    {
+        "fecha": "2025-11-19 16:13:34",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.416)"
+    },
+    {
+        "fecha": "2025-11-19 16:13:41",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.372)"
+    },
+    {
+        "fecha": "2025-11-19 16:13:48",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.380)"
+    },
+    {
+        "fecha": "2025-11-19 16:13:55",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.387)"
+    },
+    {
+        "fecha": "2025-11-19 16:14:03",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 16:14:10",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.446)"
+    },
+    {
+        "fecha": "2025-11-19 16:14:11",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 16:14:41",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 18:54:23",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 18:54:40",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.409)"
+    },
+    {
+        "fecha": "2025-11-19 18:54:47",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.409)"
+    },
+    {
+        "fecha": "2025-11-19 18:55:00",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 18:55:09",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.388)"
+    },
+    {
+        "fecha": "2025-11-19 18:55:18",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 18:55:25",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.334)"
+    },
+    {
+        "fecha": "2025-11-19 18:55:32",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.406)"
+    },
+    {
+        "fecha": "2025-11-19 18:55:39",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 18:55:47",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.420)"
+    },
+    {
+        "fecha": "2025-11-19 18:55:57",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.361)"
+    },
+    {
+        "fecha": "2025-11-19 18:56:11",
+        "tipo": "ACCESO",
+        "evento": "Se guard\u00f3 un nuevo audio (voz_registrada.wav)"
+    },
+    {
+        "fecha": "2025-11-19 18:56:19",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.421)"
+    },
+    {
+        "fecha": "2025-11-19 18:56:21",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 18:56:36",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 19:01:37",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.413)"
+    },
+    {
+        "fecha": "2025-11-19 19:01:44",
+        "tipo": "ERROR",
+        "evento": "Acceso fallido (score=0.354)"
+    },
+    {
+        "fecha": "2025-11-19 19:01:51",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.465)"
+    },
+    {
+        "fecha": "2025-11-19 19:01:53",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 19:04:24",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.451)"
+    },
+    {
+        "fecha": "2025-11-19 19:04:25",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 19:05:27",
+        "tipo": "ACCESO",
+        "evento": "Acceso OK (match=voz_registrada.wav, score=0.455)"
+    },
+    {
+        "fecha": "2025-11-19 19:05:29",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 19:15:14",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 19:31:38",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 19:33:52",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    },
+    {
+        "fecha": "2025-11-19 19:35:50",
+        "tipo": "ACCESO",
+        "evento": "Usuario entr\u00f3 a la p\u00e1gina de acceso"
+    }
+]

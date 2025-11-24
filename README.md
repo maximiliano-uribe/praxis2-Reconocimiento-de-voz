@@ -8,3 +8,13 @@ https://docs.google.com/document/d/1mVlBHgOmfloW3aLF72ZnxgmWAQqirpFryL3fjXYBw2c/
 
 documento en Latex: https://www.overleaf.com/5546881213hbpkjmgktfkz#d0cb70
 
+integrantes:
+Nicolás Jara
+Dante Valenzuela
+Boris Berrios
+Fernando Guerra
+Jose Luis Calderon
+Maximiliano Uribe
+
+profeesor:
+Eric Jeltsch
